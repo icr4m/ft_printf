@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:03:37 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/20 19:31:57 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/21 17:17:27 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,11 @@ void	ft_putstr_fd(int fd, char *str)
 	i = 0;
 	while (str[i])
 		ft_putchar_fd(fd, &str[i++]);
+}
+void	ft_print_info(char c, va_list arg)
+{
+	if (c == 's')
+	{
+		ft_putstr_fd(1, va_arg(arg, char *));
+	}
 }
