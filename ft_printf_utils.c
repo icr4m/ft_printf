@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:03:37 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/22 18:32:37 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/22 19:23:50 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ size_t	ft_r_type(char c, va_list arg)
 	// 	aa;
 	// if (c == 'p')
 	// 	aa;
-	// 	if (c == 'x')
-	// 		if (c == 'X')
-	// 			if (c == '%')
+	if (c == 'x')
+		return (ft_putnbr_base((va_arg(arg, int)), "0123456789abcdef"));
+	if (c == 'X')
+		return (ft_putnbr_base((va_arg(arg, unsigned int)),
+				"0123456789ABCDEF"));
+	// 	if (c == '%')
+	// aa;
 	return (0);
 }

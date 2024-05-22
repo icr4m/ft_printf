@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/22 17:29:38 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/22 18:59:16 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,37 @@ size_t	ft_putnbr(int n)
 	else
 		len += print_nb(num);
 	return (len);
+}
+
+size_t	ft_putnbr_base(int nbr, char *base)
+{
+	int		size_base;
+	int		nbr_final[100];
+	int		i;
+	size_t	length;
+
+	length = 0;
+	i = 0;
+	size_base = 0;
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		length += ft_putchar('-');
+	}
+	while (base[size_base])
+		size_base++;
+	if (nbr == 0)
+		length += ft_putchar(base[0]);
+	else
+	{
+		while (nbr)
+		{
+			nbr_final[i] = nbr % size_base;
+			nbr = nbr / size_base;
+			i++;
+		}
+		while (--i >= 0)
+			length += ft_putchar(base[nbr_final[i]]);
+	}
+	return (length);
 }

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:41:49 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/22 18:35:03 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/22 19:24:03 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int	ft_printf(char const *str, ...)
 
 int	main(void)
 {
-	const char	*str1 = "ca va";
-	const int	i = ft_printf("FT PRINTF : %s%c %d \n", str1, '?', -213);
-	const int	i2 = printf("PRINTF OG : %s%c %X \n", str1, '?', '2');
+	const char	*str1 = "test";
+	const int	i = ft_printf("FT PRINTF : %s%c %x \n", str1, '?', -213);
+	const int	i2 = printf("PRINTF OG : %s%c %x \n", str1, '?', -213);
 
 	if (i2 == i)
 	{
