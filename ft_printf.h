@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:07:45 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/22 11:10:19 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/22 17:31:16 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void	ft_print_info(char c, va_list arg);
-void	ft_putstr_fd(int fd, char *str);
-void	ft_putchar_fd(int fd, char c);
+# define White "\033[0;37m"
+# define Green "\033[0;32m"
+# define Red "\033[0;31m"
+# define Purple "\033[0;35m"
+
 int		ft_printf(char const *str, ...);
+size_t	ft_putchar(char c);
+size_t	ft_putstr(char *str);
+size_t	ft_putnbr(int n);
+size_t	ft_r_type(char c, va_list arg);
 
 #endif

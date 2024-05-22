@@ -6,22 +6,26 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:03:37 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/22 11:12:22 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/22 18:32:37 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(int fd, char c)
+size_t	ft_r_type(char c, va_list arg)
 {
-	write(fd, &c, 1);
-}
-
-void	ft_putstr_fd(int fd, char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		ft_putchar_fd(fd, str[i++]);
+	if (c == 'c')
+		return (ft_putchar(va_arg(arg, int)));
+	if (c == 's')
+		return (ft_putstr(va_arg(arg, char *)));
+	if (c == 'd' || c == 'i')
+		return (ft_putnbr(va_arg(arg, int)));
+	// if (c == 'u')
+	// 	aa;
+	// if (c == 'p')
+	// 	aa;
+	// 	if (c == 'x')
+	// 		if (c == 'X')
+	// 			if (c == '%')
+	return (0);
 }
