@@ -7,8 +7,10 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 # Source files
-SRCS = 	
- 
+SRCS = 	ft_printf_utils.c \
+	ft_printf.c \
+	ft_put_printf.c 
+
 # Object files
 OBJS = $(SRCS:.c=.o)
 
@@ -22,7 +24,7 @@ $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 .c.o: 
-	$(CC) $(CFLAGS) -c -include libft.h $< -o ${<:.c=.o}
+	$(CC) $(CFLAGS) -c -include ft_printf.h $< -o ${<:.c=.o}
 	
 clean:
 	rm -rf ${OBJS} ${OBJS_B}
