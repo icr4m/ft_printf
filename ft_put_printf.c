@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/22 18:59:16 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/23 12:04:21 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,72 +14,67 @@
 
 size_t	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	static size_t	print_len;
+
+	print_len += write(1, &c, 1);
+	return (print_len);
 }
 
 size_t	ft_putstr(char *str)
 {
-	size_t	len;
+	size_t	print_len;
 
-	len = 0;
 	while (*str != '\0')
 	{
-		len += ft_putchar(*str++);
+		print_len = ft_putchar(*str++);
 	}
-	return (len);
+	return (print_len);
 }
 
 static size_t	print_nb(unsigned int n)
 {
-	size_t	len;
+	size_t	print_len;
 
-	len = 0;
 	if (n >= 10)
-		len += print_nb(n / 10);
-	len += ft_putchar(n % 10 + '0');
-	return (len);
+		print_len = print_nb(n / 10);
+	print_len = ft_putchar(n % 10 + '0');
+	return (print_len);
 }
 
 size_t	ft_putnbr(int n)
 {
-	size_t			len;
+	size_t			print_len;
 	unsigned int	num;
 
-	len = 0;
 	if (n < 0)
 	{
-		len += ft_putchar('-');
+		print_len = ft_putchar('-');
 		num = -n;
 	}
 	else
 		num = n;
 	if (n == 0)
-		len += ft_putchar('0');
+		print_len = ft_putchar('0');
 	else
-		len += print_nb(num);
-	return (len);
+		print_len = print_nb(num);
+	return (print_len);
 }
 
-size_t	ft_putnbr_base(int nbr, char *base)
+size_t	ft_putnbr_base(unsigned int nbr, char *base)
 {
-	int		size_base;
-	int		nbr_final[100];
-	int		i;
-	size_t	length;
+	const int	size_base = 16;
+	int			nbr_final[100];
+	int			i;
+	size_t		print_len;
 
-	length = 0;
 	i = 0;
-	size_base = 0;
 	if (nbr < 0)
 	{
 		nbr = -nbr;
-		length += ft_putchar('-');
+		print_len = ft_putchar('-');
 	}
-	while (base[size_base])
-		size_base++;
 	if (nbr == 0)
-		length += ft_putchar(base[0]);
+		print_len = ft_putchar(base[0]);
 	else
 	{
 		while (nbr)
@@ -89,7 +84,7 @@ size_t	ft_putnbr_base(int nbr, char *base)
 			i++;
 		}
 		while (--i >= 0)
-			length += ft_putchar(base[nbr_final[i]]);
+			print_len = ft_putchar(base[nbr_final[i]]);
 	}
-	return (length);
+	return (print_len);
 }

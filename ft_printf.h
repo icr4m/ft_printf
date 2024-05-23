@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:07:45 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/22 18:59:17 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/23 11:36:49 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@
 # define Green "\033[0;32m"
 # define Red "\033[0;31m"
 # define Purple "\033[0;35m"
+# define HEXA_lower "0123456789abcdef"
+# define HEXA_upper "0123456789ABCDEF"
 
 int		ft_printf(char const *str, ...);
 size_t	ft_putchar(char c);
 size_t	ft_putstr(char *str);
 size_t	ft_putnbr(int n);
 size_t	ft_r_type(char c, va_list arg);
-size_t	ft_putnbr_base(int nbr, char *base);
+size_t	ft_putnbr_base(unsigned int nbr, char *base);
 
 #endif
