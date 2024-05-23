@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:07:45 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/23 12:39:51 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/23 15:06:38 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,5 +33,6 @@ size_t	ft_putnbr(int n);
 size_t	ft_r_type(char c, va_list arg);
 size_t	ft_putnbr_base(long nbr, char *base);
 size_t	ft_print_nb(unsigned int n);
+void	reset_print_len(void);
 
 #endif
