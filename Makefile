@@ -1,4 +1,4 @@
-NAME : libftprintf.a
+NAME = libftprintf.a
 
 # Compilation
 CC = cc
@@ -27,7 +27,7 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c -include ft_printf.h $< -o ${<:.c=.o}
 	
 clean:
-	rm -rf ${OBJS} ${OBJS_B}
+	rm -rf ${OBJS}
 
 fclean: clean
 	rm -rf $(NAME)
