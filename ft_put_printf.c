@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/23 12:04:21 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/23 13:37:30 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,24 @@ size_t	ft_putstr(char *str)
 {
 	size_t	print_len;
 
-	while (*str != '\0')
+	if (str == NULL)
+		print_len = ft_putstr("(null)");
+	else
 	{
-		print_len = ft_putchar(*str++);
+		while (*str != '\0')
+		{
+			print_len = ft_putchar(*str++);
+		}
 	}
 	return (print_len);
 }
 
-static size_t	print_nb(unsigned int n)
+size_t	ft_print_nb(unsigned int n)
 {
 	size_t	print_len;
 
 	if (n >= 10)
-		print_len = print_nb(n / 10);
+		print_len = ft_print_nb(n / 10);
 	print_len = ft_putchar(n % 10 + '0');
 	return (print_len);
 }
@@ -56,11 +61,11 @@ size_t	ft_putnbr(int n)
 	if (n == 0)
 		print_len = ft_putchar('0');
 	else
-		print_len = print_nb(num);
+		print_len = ft_print_nb(num);
 	return (print_len);
 }
 
-size_t	ft_putnbr_base(unsigned int nbr, char *base)
+size_t	ft_putnbr_base(long nbr, char *base)
 {
 	const int	size_base = 16;
 	int			nbr_final[100];
