@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:03:37 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/24 09:56:53 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 12:28:11 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ size_t	ft_r_type(char c, va_list arg)
 	if (c == 'u')
 		return (ft_print_nb(va_arg(arg, int)));
 	if (c == 'x')
-		return (ft_putnbr_base((unsigned int)(va_arg(arg, int)), HEXA_lower));
+		return (ft_putnbr_base((unsigned int)(va_arg(arg, int)), HEXA_LOWER));
 	if (c == 'X')
-		return (ft_putnbr_base((unsigned int)(va_arg(arg, int)), HEXA_upper));
+		return (ft_putnbr_base((unsigned int)(va_arg(arg, int)), HEXA_UPPER));
 	if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
@@ -40,5 +40,5 @@ size_t	ft_p(void *ptr)
 	if (ptr == NULL)
 		return (ft_putstr("(nil)"));
 	else
-		return (ft_putstr("0x") + ft_putnbr_base((long)ptr, HEXA_lower));
+		return (ft_putstr("0x") + ft_putnbr_base((long)ptr, HEXA_UPPER));
 }
