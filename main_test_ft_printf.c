@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:12:56 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/24 09:57:02 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 12:46:48 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,12 +117,25 @@ int	main(void)
 	// test 10
 	printf(Purple "Test 10 (%%p):\n");
 	printf(White);
-	i[18] = printf("PRINTF_OG: %p %p %p\n", &str1, (void *)-214748364, str1);
-	i[19] = ft_printf("FT_PRINTF: %p %p %p\n", &str1, (void *)-214748364, str1);
+	i[18] = printf("PRINTF_OG: %p %p %p\n", &str1, (void *)-2147483648, str1);
+	i[19] = ft_printf("FT_PRINTF: %p %p %p\n", &str1, (void *)-2147483648,
+			str1);
 	if (i[18] == i[19])
 		printf(Green "Ok ✓");
 	else
 		printf(Red "KO ✗ OG=%d, FT:%d", i[18], i[19]);
+	printf(White "\n");
+	// test 11
+	printf(Purple "Test 11 (%%p 2):\n");
+	printf(White);
+	i[20] = printf("PRINTF_OG: %p %p %p\n", (void *)LONG_MAX, (void *)LONG_MIN,
+			(void *)LLONG_MAX);
+	i[21] = ft_printf("FT_PRINTF: %p %p %p\n", (void *)LONG_MAX,
+			(void *)LONG_MIN, (void *)LLONG_MAX);
+	if (i[20] == i[21])
+		printf(Green "Ok ✓");
+	else
+		printf(Red "KO ✗ OG=%d, FT:%d", i[20], i[21]);
 	printf(White "\n");
 	return (0);
 }

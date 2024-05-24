@@ -6,13 +6,14 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:07:45 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/24 12:27:35 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 12:45:54 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <limits.h>
 # include <stdarg.h>
 # include <stdint.h>
 # include <stdio.h>

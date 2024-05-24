@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:03:37 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/24 12:28:11 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 12:36:55 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ size_t	ft_p(void *ptr)
 	if (ptr == NULL)
 		return (ft_putstr("(nil)"));
 	else
-		return (ft_putstr("0x") + ft_putnbr_base((long)ptr, HEXA_UPPER));
+		return (ft_putstr("0x") + ft_putnbr_base((long)ptr, HEXA_LOWER));
 }
