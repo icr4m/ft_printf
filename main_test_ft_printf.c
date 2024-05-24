@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:12:56 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/23 16:13:02 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 09:57:02 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ int	main(void)
 	// test 10
 	printf(Purple "Test 10 (%%p):\n");
 	printf(White);
-	i[18] = printf("PRINTF_OG: %p %p %p\n", &str1, &str2, str1);
-	i[19] = ft_printf("FT_PRINTF: %p %p %p\n", &str1, &str2, str1);
+	i[18] = printf("PRINTF_OG: %p %p %p\n", &str1, (void *)-214748364, str1);
+	i[19] = ft_printf("FT_PRINTF: %p %p %p\n", &str1, (void *)-214748364, str1);
 	if (i[18] == i[19])
 		printf(Green "Ok ✓");
 	else

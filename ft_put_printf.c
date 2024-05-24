@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/23 15:11:52 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 10:00:33 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ size_t	ft_putnbr(int n)
 	return (print_len);
 }
 
-size_t	ft_putnbr_base(long nbr, char *base)
+size_t	ft_putnbr_base(unsigned long nbr, char *base)
 {
 	const int	size_base = 16;
 	int			nbr_final[100];
@@ -74,11 +74,6 @@ size_t	ft_putnbr_base(long nbr, char *base)
 
 	print_len = 0;
 	i = 0;
-	if (nbr < 0)
-	{
-		nbr = -nbr;
-		print_len += ft_putchar('-');
-	}
 	if (nbr == 0)
 		print_len += ft_putchar(base[0]);
 	else

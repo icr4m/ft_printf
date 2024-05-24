@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:07:45 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/23 15:06:38 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 10:00:24 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ size_t	ft_putchar(char c);
 size_t	ft_putstr(char *str);
 size_t	ft_putnbr(int n);
 size_t	ft_r_type(char c, va_list arg);
-size_t	ft_putnbr_base(long nbr, char *base);
+size_t	ft_putnbr_base(unsigned long nbr, char *base);
 size_t	ft_print_nb(unsigned int n);
-void	reset_print_len(void);
+size_t	ft_p(void *ptr);
 
 #endif

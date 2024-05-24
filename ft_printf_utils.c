@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:03:37 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/23 16:03:56 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/24 09:56:53 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ size_t	ft_r_type(char c, va_list arg)
 		return (ft_putstr(va_arg(arg, char *)));
 	if (c == 'p')
 	{
-		return (ft_putstr("0x") + ft_putnbr_base((long)va_arg(arg, void *),
-				HEXA_lower));
+		return (ft_p(va_arg(arg, void *)));
 	}
 	if (c == 'd' || c == 'i')
 		return (ft_putnbr(va_arg(arg, int)));
@@ -34,4 +33,12 @@ size_t	ft_r_type(char c, va_list arg)
 	if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
+}
+
+size_t	ft_p(void *ptr)
+{
+	if (ptr == NULL)
+		return (ft_putstr("(nil)"));
+	else
+		return (ft_putstr("0x") + ft_putnbr_base((long)ptr, HEXA_lower));
 }
