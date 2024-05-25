@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:12:56 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/24 12:46:48 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/25 17:04:47 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@ int	main(void)
 	const char	*str1 = NULL;
 	int			*i;
 	const char	*str2 = "test";
+	int			good_token;
 
+	good_token = 0;
 	i = malloc(10000);
+	printf("╔══════════════════════════════════════════════════════════════════════════════╗\n");
+	printf("║			🌶️ Bienvenue sur la proutinette 🌶️								║\n");
+	printf("╚══════════════════════════════════════════════════════════════════════════════╝\n");
 	// test 1
 	printf(Purple "Test 1 :\n");
 	printf(White);
@@ -32,7 +37,7 @@ int	main(void)
 	if (i[0] == i[1])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[0], i[1]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[0], i[1]), good_token = 1;
 	printf(White "\n");
 	// test 2
 	printf(Purple "Test 2 :\n");
@@ -42,7 +47,7 @@ int	main(void)
 	if (i[2] == i[3])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[2], i[3]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[2], i[3]), good_token = 1;
 	printf(White "\n");
 	// test 3
 	printf(Purple "Test 3 :\n");
@@ -52,7 +57,7 @@ int	main(void)
 	if (i[4] == i[5])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[4], i[5]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[4], i[5]), good_token = 1;
 	printf(White "\n");
 	// test 4
 	printf(Purple "Test 4 :\n");
@@ -62,7 +67,7 @@ int	main(void)
 	if (i[6] == i[7])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[6], i[7]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[6], i[7]), good_token = 1;
 	printf(White "\n");
 	// test 5
 	printf(Purple "Test 5 (%%d):\n");
@@ -72,7 +77,7 @@ int	main(void)
 	if (i[8] == i[9])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[8], i[9]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[8], i[9]), good_token = 1;
 	printf(White "\n");
 	// test 6
 	printf(Purple "Test 6 (%%i):\n");
@@ -82,7 +87,7 @@ int	main(void)
 	if (i[10] == i[11])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[10], i[11]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[10], i[11]), good_token = 1;
 	printf(White "\n");
 	// test 7
 	printf(Purple "Test 7 (%%u):\n");
@@ -92,7 +97,7 @@ int	main(void)
 	if (i[12] == i[13])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[12], i[13]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[12], i[13]), good_token = 1;
 	printf(White "\n");
 	// test 8
 	printf(Purple "Test 8 (%%x):\n");
@@ -102,7 +107,7 @@ int	main(void)
 	if (i[14] == i[15])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[14], i[15]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[14], i[15]), good_token = 1;
 	printf(White "\n");
 	// test 9
 	printf(Purple "Test 9 (%%X):\n");
@@ -112,7 +117,7 @@ int	main(void)
 	if (i[16] == i[17])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[16], i[17]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[16], i[17]), good_token = 1;
 	printf(White "\n");
 	// test 10
 	printf(Purple "Test 10 (%%p):\n");
@@ -123,7 +128,7 @@ int	main(void)
 	if (i[18] == i[19])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[18], i[19]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[18], i[19]), good_token = 1;
 	printf(White "\n");
 	// test 11
 	printf(Purple "Test 11 (%%p 2):\n");
@@ -135,7 +140,31 @@ int	main(void)
 	if (i[20] == i[21])
 		printf(Green "Ok ✓");
 	else
-		printf(Red "KO ✗ OG=%d, FT:%d", i[20], i[21]);
+		printf(Red "KO ✗ OG=%d, FT:%d", i[20], i[21]), good_token = 1;
 	printf(White "\n");
+	// test 12
+	printf(Purple "printf(NULL)\n");
+	printf(White);
+	i[22] = printf(NULL);
+	i[23] = ft_printf(NULL);
+	if (i[22] == i[23])
+		printf(Green "Ok ✓");
+	else
+		printf(Red "KO ✗ OG=%d, FT:%d", i[22], i[23]), good_token = 1;
+	printf(White "\n");
+	if (good_token == 1)
+	{
+		printf(Red);
+		printf("╔══════════════════════════════════════════════════════════════════════════════╗\n");
+		printf("║				 🤢 Dommage, fix ca bien ! 🤢									║\n");
+		printf("╚══════════════════════════════════════════════════════════════════════════════╝\n");
+	}
+	else
+		{
+		printf(Green);
+		printf("╔══════════════════════════════════════════════════════════════════════════════╗\n");
+		printf("║		🥳 Masterclass, plus que la moulinette 🥳								║\n");
+		printf("╚══════════════════════════════════════════════════════════════════════════════╝\n");
+	}
 	return (0);
 }

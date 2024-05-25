@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 16:41:49 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/23 16:16:33 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/05/25 17:04:07 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_printf(char const *str, ...)
 	i = 0;
 	count = 0;
 	va_start(arg, str);
+	if (str == NULL)
+		return (-1);
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
