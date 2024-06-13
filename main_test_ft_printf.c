@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:12:56 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/29 07:39:22 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/10 16:31:11 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,16 @@ int	main(void)
 	printf(White "\n");
 	// test 12
 	printf(Purple "printf(NULL)\n");
+	printf(White);
+	i[22] = printf(NULL);
+	i[23] = ft_printf(NULL);
+	if (i[22] == i[23])
+		printf(Green "Ok ✓");
+	else
+		printf(Red "KO ✗ OG=%d, FT:%d", i[22], i[23]), good_token = 1;
+	printf(White "\n");
+		// test 13
+	printf(Purple "test%%\n");
 	printf(White);
 	i[22] = printf(NULL);
 	i[23] = ft_printf(NULL);

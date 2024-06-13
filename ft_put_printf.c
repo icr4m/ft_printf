@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:19 by ijaber            #+#    #+#             */
-/*   Updated: 2024/05/24 10:00:33 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/06/10 19:10:17 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ size_t	ft_print_nb(unsigned int n)
 	return (print_len);
 }
 
-size_t	ft_putnbr(int n)
+size_t	ft_putnbr(long int n)
 {
 	size_t			print_len;
 	unsigned int	num;
